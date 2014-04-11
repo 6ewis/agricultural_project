@@ -1,0 +1,97 @@
+<div id="swxp-counts"></div>
+
+<script>
+createGraph({
+    chart: {    
+                renderTo: 'swxp-counts',
+                events: {},
+                type: 'column',
+                borderWidth: 2,
+                borderColor: '#98bf21'
+            },
+            title: {
+                text: 'SWXp * Country Crosstabulation'
+            },
+            subtitle: {
+                text: 'Source: http://idatassist.com/'
+            },
+            xAxis: {
+                categories: [
+                    'Bangladesh',
+                    'Ghana',
+                    'India',
+                    'Malawi',
+                    'Tanzania',
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Count'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'A',
+                data: [1,47,258,35,1]
+    
+            }, {
+                name: 'B',
+                data: [9,19,121,123,40]
+    
+            }, {
+                name: 'C',
+                data: [5,4,33,105,55]
+    
+            }, {
+                name: 'D',
+                data: [7,0,13,59,44]
+    
+            }]
+    });
+
+function createGraph(chartOptions) {
+    // open the basic chart
+    $(document).ready(function () {
+        // set the click event for the parent chart
+        chartOptions.chart.events.click = function () {
+            hs.htmlExpand(document.getElementById(chartOptions.chart.renderTo), {
+                width: 9999,
+                height: 9999,
+                allowWidthReduction: true,
+                preserveContent: false
+            }, {
+                chartOptions: chartOptions
+            });
+        };
+        var chart = new Highcharts.Chart(chartOptions);
+    });
+}
+
+// Create a new chart on Highslide popup open
+hs.Expander.prototype.onAfterExpand = function () {
+    if (this.custom.chartOptions) {
+        var chartOptions = this.custom.chartOptions;
+        if (!this.hasChart) {
+            chartOptions.chart.renderTo = $('.highslide-body')[0];
+            chartOptions.chart.height = $('.highslide-body').parent().height();
+            chartOptions.chart.events.click = function () {};
+            var hsChart = new Highcharts.Chart(chartOptions);
+        }
+        this.hasChart = true;
+    }
+};
+</script>

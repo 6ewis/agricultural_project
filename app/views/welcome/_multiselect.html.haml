@@ -1,0 +1,40 @@
+.sort-wrap.notshown
+  .toggle
+    = image_tag 'dropdown.png', alt: 'dropdown_icon'
+    .filter SORT
+  %h3 Sort
+  %ul#sortby
+    %li
+      %span.sort-label by Country
+      %input{type: "checkbox", value: "#{country_path }", id: ""}/
+    %li
+      %span.sort-label by Value Chain
+      %input{type: "checkbox", value: "#{valuechain_path}", id: ""}/
+    %li
+      %span.sort-label by Group Leader Gender
+      %input{type: "checkbox", value: "#{groupgender_path}", id: ""}/
+    %li
+      %span.sort-label All
+      %input{type: "checkbox", value: "#{index_path}", id: "all"}/
+:javascript
+  $(document).ready( function() {
+  $('.toggle').on('click', function(e){
+    $('.sort-wrap').toggleClass('notshown');
+  });
+
+  $('.sort-wrap').mouseleave(function(){$(this).addClass('notshown');})
+
+
+  $("#sortby input[type=checkbox]").change(function() {
+  
+  if ($(this).prop('checked') )
+   { 
+   $.getScript($(this).val());
+   $("#sortby input:not(:checked)").prop('disabled', true);
+   }   
+  else
+    { 
+    $("#sortby input").prop('disabled', false);
+    }
+  });
+  });

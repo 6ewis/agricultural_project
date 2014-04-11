@@ -1,0 +1,56 @@
+<div id="mkxb-proportions"></div>
+
+<script>
+$(function () {
+        $('#mkxb-proportions').highcharts({
+            chart: {
+                type: 'column',
+                borderWidth: 2,
+                borderColor: '#98bf21'
+            },
+            title: {
+                text: 'MKXb * Country Crosstabulation'
+            },
+            subtitle: {
+                text: 'Source: http://idatassist.com/'
+            },
+            xAxis: {
+                categories: [
+                    'Bangladesh',
+                    'Ghana',
+                    'India',
+                    'Malawi',
+                    'Tanzania',
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Proportion'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '0',
+                data: [18.2,0.0,59.5,14.0,31.4]
+    
+            }, {
+                name: '1',
+                data: [81.8,100.0,40.5,86.0,68.6]
+            }]
+        });
+    });
+</script>

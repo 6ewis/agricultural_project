@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset = 'utf-8'>
+<html>
+<head>
+  <title>AgriculturalProject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  <script type='text/javascript' src="http://highcharts.com/highslide/highslide-full.min.js"></script>
+  <script type='text/javascript' src="http://highcharts.com/highslide/highslide.config.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://highcharts.com/highslide/highslide.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+  <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href=<%= "#{root_path}" %>> Dashboard</a>
+          <a class="blog-nav-item" href="#">About</a>
+        </nav>
+      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10">
+        <h3>DATASIST</h3>
+        <span id="update_charts">
+          <%= yield %>
+        </span>
+      </div>
+      <div class="col-md-2">
+       <h3>
+         <%= render partial: 'welcome/multiselect' %>
+       </h3>
+       
+       <br><br><br><br><br><br><br><br><br><br><br><br><h3>Help!?</h3>
+       <br>
+       <ul><li> Click on a bar chart to expand it</li>
+           <li> Click on the icon above "SORT" to filter by Country, by Value Chain,or by Group Leader Gender</li></ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

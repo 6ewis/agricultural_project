@@ -1,0 +1,65 @@
+<div id="spxp-proportions"></div>
+
+<script>
+$(function () {
+        $('#spxp-proportions').highcharts({
+            chart: {
+                type: 'column',
+                borderWidth: 2,
+                borderColor: '#98bf21'
+            },
+            title: {
+                text: 'SPXp * Country Crosstabulation'
+            },
+            subtitle: {
+                text: 'Source: http://idatassist.com/'
+            },
+            xAxis: {
+                categories: [
+                    'Bangladesh',
+                    'Ghana',
+                    'India',
+                    'Malawi',
+                    'Tanzania',
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Proportion'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'A',
+                data: [18.2,22.9,15.3,0.0,12.9]
+    
+            }, {
+                name: 'B',
+                data: [9.1,5.7,10.8,0.0,7.9]
+    
+            }, {
+                name: 'C',
+                data: [40.9,61.4,31.5,0.0,47.9]
+    
+            }, {
+                name: 'D',
+                data: [31.8,10.0,42.4,100.0,31.4]
+    
+            }]
+        });
+    });
+</script>

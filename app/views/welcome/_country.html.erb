@@ -1,0 +1,12 @@
+<% ['swxp','swxb', 'ilxp','ilxb','uixp','uixb','plxp','plxb','pdxp','pdxb','spxp','spxb','hvxp', 'hvxb', 'phxp', 'phxb','mkxp', 'mkxb','rkxp', 'rkxb', 'gdxp', 'gdxb'  ].each do |variable| %>
+
+  <div class="row bottom-buffer">
+    <div class="col-md-5">
+      <%= render partial: "#{variable}_country_counts" %>
+    </div>
+    <div class="col-md-5">
+      <%= render partial: "#{variable}_country_proportions" %>
+    </div>
+  </div>
+
+<% end %>

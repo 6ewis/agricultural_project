@@ -1,0 +1,65 @@
+<div id="hvxp-counts"></div>
+
+<script>
+$(function () {
+        $('#hvxp-counts').highcharts({
+            chart: {
+                type: 'column',
+                borderWidth: 2,
+                borderColor: '#98bf21'
+            },
+            title: {
+                text: 'HVXp * Country Crosstabulation'
+            },
+            subtitle: {
+                text: 'Source: http://idatassist.com/'
+            },
+            xAxis: {
+                categories: [
+                    'Bangladesh',
+                    'Ghana',
+                    'India',
+                    'Malawi',
+                    'Tanzania',
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Count'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'A',
+                data: [6,53,366,167,44]
+    
+            }, {
+                name: 'B',
+                data: [6,1,24,4,27]
+    
+            }, {
+                name: 'C',
+                data: [3,3,15,148,55]
+    
+            }, {
+                name: 'D',
+                data: [7,13,20,3,14]
+    
+            }]
+        });
+    });
+</script>

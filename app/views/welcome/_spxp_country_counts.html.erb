@@ -1,0 +1,65 @@
+<div id="spxp-counts"></div>
+
+<script>
+$(function () {
+        $('#spxp-counts').highcharts({
+            chart: {
+                type: 'column',
+                borderWidth: 2,
+                borderColor: '#98bf21'
+            },
+            title: {
+                text: 'SPXp * Country Crosstabulation'
+            },
+            subtitle: {
+                text: 'Source: http://idatassist.com/'
+            },
+            xAxis: {
+                categories: [
+                    'Bangladesh',
+                    'Ghana',
+                    'India',
+                    'Malawi',
+                    'Tanzania',
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Count'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'A',
+                data: [4,16,65,0,18]
+    
+            }, {
+                name: 'B',
+                data: [2,4,46,0,11]
+    
+            }, {
+                name: 'C',
+                data: [9,43,134,0,67]
+    
+            }, {
+                name: 'D',
+                data: [7,7,180,322,44]
+    
+            }]
+        });
+    });
+</script>

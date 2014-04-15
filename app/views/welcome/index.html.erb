@@ -1,3 +1,4 @@
-<%= render partial: 'country' %>
-<%= render partial: 'valuechain' %>
-<%= render partial: 'groupgender' %>
+<%= render partial: 'country', locals: {list_variables: @list_variables} %>
+<%= render partial: 'valuechain', locals: {list_variables: @list_variables} %>
+<%= render partial: 'gender_composition', locals: {list_variables: @list_variables} %>
+<%= render partial: 'gender_leader', locals: {list_variables: @list_variables} %>

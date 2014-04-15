@@ -2,12 +2,16 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.0'
 gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
-gem 'bootstrap-sass'
+gem 'roo' #Importing from Excel
+gem 'jquery-qtip2-rails'
 
-gem 'haml'
+
+
 gem 'rails_12factor', group: :production
 
+gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass'
+gem 'haml'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'

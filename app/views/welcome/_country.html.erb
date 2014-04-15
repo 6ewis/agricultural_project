@@ -1,11 +1,70 @@
-<% ['swxp','swxb', 'ilxp','ilxb','uixp','uixb','plxp','plxb','pdxp','pdxb','spxp','spxb','hvxp', 'hvxb', 'phxp', 'phxb','mkxp', 'mkxb','rkxp', 'rkxb', 'gdxp', 'gdxb'  ].each do |variable| %>
+<% list_variables.each_with_index do |variable, index| %>
 
   <div class="row bottom-buffer">
     <div class="col-md-5">
-      <%= render partial: "#{variable}_country_counts" %>
+      <%= render partial: "grade", locals: { bangladesh: variable[:grade_by_country][:bangladesh].values,
+      	  ghana: variable[:grade_by_country][:ghana].values,
+      	  india: variable[:grade_by_country][:india].values,
+      	  malawi: variable[:grade_by_country][:malawi].values,
+      	  tanzania: variable[:grade_by_country][:tanzania].values,
+      	  text: "Count",
+      	  max: "max: null",
+      	  decimal: ".1f",
+      	  sheet: "#{variable[:sheet]} by counts grouped by grades",
+      	  index: "#{index}-count_grade_by_country",
+      	  by_country: true
+
+
+      } %>
+    </div>
+
+    <div class="col-md-5">
+      <%= render partial: "grade", locals: { bangladesh: variable[:grade_in_percent_by_country][:bangladesh].values.map {|i| i*100},
+      	  ghana: variable[:grade_in_percent_by_country][:ghana].values.map {|i| i*100},
+      	  india: variable[:grade_in_percent_by_country][:india].values.map {|i| i*100},
+      	  malawi: variable[:grade_in_percent_by_country][:malawi].values.map {|i| i*100},
+      	  tanzania: variable[:grade_in_percent_by_country][:tanzania].values.map {|i| i*100},
+      	  text: 'Proportion',
+      	  max: "max: 100",
+      	  decimal: ".3f",
+      	  sheet: "#{variable[:sheet]} by proportions grouped by grades",
+      	  index: "#{index}-proportion_grade_by_country",
+      	  by_country: true
+
+      } %>
+    </div>
+  </div>
+
+   <div class="row bottom-buffer">
+    <div class="col-md-5">
+      <%= render partial: "binary", locals: { bangladesh: variable[:binary_by_country][:bangladesh].values,
+      	  ghana: variable[:binary_by_country][:ghana].values,
+      	  india: variable[:binary_by_country][:india].values,
+      	  malawi: variable[:binary_by_country][:malawi].values,
+      	  tanzania: variable[:binary_by_country][:tanzania].values,
+      	  text: 'Count',
+      	  max: "max: null",
+      	  decimal: ".1f",
+      	  sheet: "#{variable[:sheet]} by counts grouped by yes/no",
+      	  index: "#{index}-count_binary_by_country",
+      	  by_country: true
+
+      } %>
     </div>
     <div class="col-md-5">
-      <%= render partial: "#{variable}_country_proportions" %>
+      <%= render partial: "binary", locals: { bangladesh: variable[:binary_in_percent_by_country][:bangladesh].values.map {|i| i*100},
+      	  ghana: variable[:binary_in_percent_by_country][:ghana].values.map {|i| i*100},
+      	  india: variable[:binary_in_percent_by_country][:india].values.map {|i| i*100},
+      	  malawi: variable[:binary_in_percent_by_country][:malawi].values.map {|i| i*100},
+      	  tanzania: variable[:binary_in_percent_by_country][:tanzania].values.map {|i| i*100},
+      	  text: 'Proportion',
+      	  max: "max: 100",
+      	  decimal: ".3f",
+      	  sheet: "#{variable[:sheet]} by proportions grouped by yes/no",
+      	  index: "#{index}-proportion_binary_by_country",
+      	  by_country: true
+
+      } %>
     </div>
   </div>
 

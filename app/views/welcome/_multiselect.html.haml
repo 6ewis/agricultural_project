@@ -5,17 +5,18 @@
   %h3 Sort
   %ul#sortby
     %li
-      %span.sort-label by Country
-      %input{type: "checkbox", value: "#{country_path }", id: ""}/
+      %span.sort-label Country
+      %input{type: "checkbox", value: "#{country_path}", id: ""}/
     %li
-      %span.sort-label by Value Chain
+      %span.sort-label Value Chain
       %input{type: "checkbox", value: "#{valuechain_path}", id: ""}/
     %li
-      %span.sort-label by Group Leader Gender
-      %input{type: "checkbox", value: "#{groupgender_path}", id: ""}/
+      %span.sort-label Gender Composition of Group
+      %input{type: "checkbox", value: "#{gender_composition_path}", id: ""}/
     %li
-      %span.sort-label All
-      %input{type: "checkbox", value: "#{index_path}", id: "all"}/
+      %span.sort-label Gender of Group Leader
+      %input{type: "checkbox", value: "#{gender_leader_path}", id: ""}/
+    
 :javascript
   $(document).ready( function() {
   $('.toggle').on('click', function(e){

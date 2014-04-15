@@ -1,1 +1,1 @@
-$('#update_charts').html("<%= j render(partial: 'valuechain')%>");
+$('#update_charts').html("<%= j render(partial: 'valuechain', locals: {list_variables: Welcome.list_variables})%>");

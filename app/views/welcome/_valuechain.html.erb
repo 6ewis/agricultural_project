@@ -1,1 +1,91 @@
-<h3>By Value Chain Is In Construction</h3>
+<% list_variables.each_with_index do |variable, index| %>
+
+  <div class="row bottom-buffer">
+    <div class="col-md-5">
+      <%= render partial: "grade", locals: { bangladesh_indigo: variable[:grade_by_value_chain][:bangladesh_indigo].values,
+      	  ghana_groundnuts: variable[:grade_by_value_chain][:ghana_groundnuts].values,
+      	  ghana_soy: variable[:grade_by_value_chain][:ghana_soy].values,
+      	  india_maize: variable[:grade_by_value_chain][:india_maize].values,
+      	  india_paddy: variable[:grade_by_value_chain][:india_paddy].values,
+          malawi_groundnut: variable[:grade_by_value_chain][:malawi_groundnut].values,
+          malawi_soy: variable[:grade_by_value_chain][:malawi_soy].values,
+          tanzania_cassava: variable[:grade_by_value_chain][:tanzania_cassava].values,
+          tanzania_sesame: variable[:grade_by_value_chain][:tanzania_sesame].values,
+      	  text: "Count",
+      	  max: "max: null",
+      	  decimal: ".1f",
+      	  sheet: "#{variable[:sheet]} by counts grouped by grades",
+      	  index: "#{index}-count_grade_by_value_chain",
+          by_country: false,
+          by_value_chain: true
+
+
+      } %>
+    </div>
+
+    <div class="col-md-5">
+      <%= render partial: "grade", locals: { bangladesh_indigo: variable[:grade_in_percent_by_value_chain][:bangladesh_indigo].values.map {|i| i*100},
+          ghana_groundnuts: variable[:grade_in_percent_by_value_chain][:ghana_groundnuts].values.map {|i| i*100},
+          ghana_soy: variable[:grade_in_percent_by_value_chain][:ghana_soy].values.map {|i| i*100},
+          india_maize: variable[:grade_in_percent_by_value_chain][:india_maize].values.map {|i| i*100},
+          india_paddy: variable[:grade_in_percent_by_value_chain][:india_paddy].values.map {|i| i*100},
+          malawi_groundnut: variable[:grade_in_percent_by_value_chain][:malawi_groundnut].values.map {|i| i*100},
+          malawi_soy: variable[:grade_in_percent_by_value_chain][:malawi_soy].values.map {|i| i*100},
+          tanzania_cassava: variable[:grade_in_percent_by_value_chain][:tanzania_cassava].values.map {|i| i*100},
+          tanzania_sesame: variable[:grade_in_percent_by_value_chain][:tanzania_sesame].values.map {|i| i*100},
+      	  text: 'Proportion',
+      	  max: "max: 100",
+      	  decimal: ".3f",
+      	  sheet: "#{variable[:sheet]} by proportions grouped by grades",
+      	  index: "#{index}-proportion_grade_by_value_chain",
+          by_country: false,
+          by_value_chain: true
+
+      } %>
+    </div>
+  </div>
+
+   <div class="row bottom-buffer">
+    <div class="col-md-5">
+      <%= render partial: "binary", locals: { bangladesh_indigo: variable[:binary_by_value_chain][:bangladesh_indigo].values,
+          ghana_groundnuts: variable[:binary_by_value_chain][:ghana_groundnuts].values,
+          ghana_soy: variable[:binary_by_value_chain][:ghana_soy].values,
+          india_maize: variable[:binary_by_value_chain][:india_maize].values,
+          india_paddy: variable[:binary_by_value_chain][:india_paddy].values,
+          malawi_groundnut: variable[:binary_by_value_chain][:malawi_groundnut].values,
+          malawi_soy: variable[:binary_by_value_chain][:malawi_soy].values,
+          tanzania_cassava: variable[:binary_by_value_chain][:tanzania_cassava].values,
+          tanzania_sesame: variable[:binary_by_value_chain][:tanzania_sesame].values,
+      	  text: 'Count',
+      	  max: "max: null",
+      	  decimal: ".1f",
+      	  sheet: "#{variable[:sheet]} by counts grouped by yes/no",
+      	  index: "#{index}-count_binary_by_value_chain",
+          by_country: false,
+          by_value_chain: true
+
+      } %>
+    </div>
+    <div class="col-md-5">
+      <%= render partial: "binary", locals: { bangladesh_indigo: variable[:binary_in_percent_by_value_chain][:bangladesh_indigo].values,
+          ghana_groundnuts: variable[:binary_in_percent_by_value_chain][:ghana_groundnuts].values,
+          ghana_soy: variable[:binary_in_percent_by_value_chain][:ghana_soy].values,
+          india_maize: variable[:binary_in_percent_by_value_chain][:india_maize].values,
+          india_paddy: variable[:binary_in_percent_by_value_chain][:india_paddy].values,
+          malawi_groundnut: variable[:binary_in_percent_by_value_chain][:malawi_groundnut].values,
+          malawi_soy: variable[:binary_in_percent_by_value_chain][:malawi_soy].values,
+          tanzania_cassava: variable[:binary_in_percent_by_value_chain][:tanzania_cassava].values,
+          tanzania_sesame: variable[:binary_in_percent_by_value_chain][:tanzania_sesame].values,
+      	  text: 'Proportion',
+      	  max: "max: 1",
+      	  decimal: ".3f",
+      	  sheet: "#{variable[:sheet]} by proportions grouped by yes/no",
+      	  index: "#{index}-proportion_binary_by_value_chain",
+          by_country: false,
+          by_value_chain: true
+
+      } %>
+    </div>
+  </div>
+
+<% end %>

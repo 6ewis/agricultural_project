@@ -20,29 +20,22 @@
       <div class="container">
         <nav class="blog-nav">
           <a class="blog-nav-item active" href=<%= "#{root_path}" %>> Dashboard</a>
-          <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item crazyhelp" href="javascript:Alert()">Help </a>
         </nav>
       </div>
   </div>
   <div class="container-fluid">
-    <div class="row">
       <div class="col-md-10">
-        <h3>DATASIST</h3>
-        <span id="update_charts">
-          <%= yield %>
-        </span>
+        <h3 class="bg-success"><strong>Pathways PPT Analysis Dashboard</strong></h3>
       </div>
       <div class="col-md-2">
        <h3>
          <%= render partial: 'welcome/multiselect' %>
-       </h3>
-       
-       <br><br><br><br><br><br><br><br><br><br><br><br><h3>Help!?</h3>
-       <br>
-       <ul><li> Click on a bar chart to expand it, and interact with it.</li>
-           <li> Click on the icon above "SORT" to filter by Country, by Value Chain,or by Group Leader Gender.</li>
+       </h3> 
       </div>
-    </div>
+      <span id="update_charts">
+          <%= yield %>
+      </span>
   </div>
 </body>
 </html>

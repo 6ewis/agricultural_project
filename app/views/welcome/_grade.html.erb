@@ -1,39 +1,37 @@
-<div id="swxp-proportions"></div>
+<div id= "<%= index %>"></div>
 
 <script>
 createGraph({
     chart: {    
-                renderTo: 'swxp-proportions',
+                renderTo: "<%= index %>",
                 events: {},
                 type: 'column',
                 borderWidth: 2,
                 borderColor: '#98bf21'
             },
             title: {
-                text: 'SWXp * Country Crosstabulation'
+                text: "<strong><%= sheet %></strong>"
             },
-            subtitle: {
-                text: 'Source: http://idatassist.com/'
-            },
+
             xAxis: {
                 categories: [
-                    'Bangladesh',
-                    'Ghana',
-                    'India',
-                    'Malawi',
-                    'Tanzania',
+                    'A',
+                    'B',
+                    'C',
+                    'D',
                 ]
             },
             yAxis: {
                 min: 0,
+                <%= max %>,
                 title: {
-                    text: 'Proportion'
+                    text: "<%= text %>"
                 }
             },
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y: <%= decimal %>}</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
@@ -44,23 +42,66 @@ createGraph({
                     borderWidth: 0
                 }
             },
+            <% if by_country %>
             series: [{
-                name: 'A',
-                data: [4.5,67.1,60.7,10.9,0.7]
+                name: 'Bangladesh',
+                data: <%= bangladesh %>
+            }, {
+                name: 'Ghana',
+                data: <%= ghana %>
     
             }, {
-                name: 'B',
-                data: [40.9,27.1,28.5,38.2,28.6]
+                name: 'India',
+                data: <%= india %>
     
             }, {
-                name: 'C',
-                data: [22.7,5.7,7.8,32.6,39.3]
+                name: 'Malawi',
+                data: <%= malawi %>
     
             }, {
-                name: 'D',
-                data: [31.8,0.0,3.1,18.3,31.4]
+                name: 'Tanzania',
+                data: <%= tanzania %>
     
             }]
+           <% elsif by_value_chain %>
+            series: [{
+                name: 'Bangladesh Indigo',
+                data: <%= bangladesh_indigo %>
+            }, {
+                name: 'Ghana Groundnuts',
+                data: <%= ghana_groundnuts %>
+    
+            }, {
+                name: 'Ghana Soy',
+                data: <%= ghana_soy %>
+    
+            }, {
+                name: 'India Maize',
+                data: <%= india_maize %>
+    
+            }, {
+                name: 'India Paddy',
+                data: <%= india_paddy %>
+    
+            }, {
+                name: 'Malawi Groundnut',
+                data: <%= malawi_groundnut %>
+    
+            }, {
+                name: 'Malawi Soy',
+                data: <%= malawi_soy %>
+    
+            }, {
+                name: 'Tanzania Cassava',
+                data: <%= tanzania_cassava %>
+    
+            }, {
+                name: 'Tanzania Sesame',
+                data: <%= tanzania_sesame %>
+    
+            }]
+            <% end %>
+            
         });
 
 function createGraph(chartOptions) {

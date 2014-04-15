@@ -1,1 +1,1 @@
-$('#update_charts').html("<%= j render(partial: 'country')%>");
+$('#update_charts').html("<%= j render(partial: 'country', locals: {list_variables: Welcome.list_variables})%>");

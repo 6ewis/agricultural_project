@@ -8,8 +8,6 @@
       	  malawi: variable[:grade_by_country][:malawi].values,
       	  tanzania: variable[:grade_by_country][:tanzania].values,
       	  text: "Count",
-      	  max: "max: null",
-      	  decimal: ".1f",
       	  sheet: "#{variable[:sheet]} by counts grouped by grades",
       	  index: "#{index}-count_grade_by_country",
       	  by_country: true
@@ -25,8 +23,6 @@
       	  malawi: variable[:grade_in_percent_by_country][:malawi].values.map {|i| i*100},
       	  tanzania: variable[:grade_in_percent_by_country][:tanzania].values.map {|i| i*100},
       	  text: 'Proportion',
-      	  max: "max: 100",
-      	  decimal: ".3f",
       	  sheet: "#{variable[:sheet]} by proportions grouped by grades",
       	  index: "#{index}-proportion_grade_by_country",
       	  by_country: true
@@ -43,8 +39,6 @@
       	  malawi: variable[:binary_by_country][:malawi].values,
       	  tanzania: variable[:binary_by_country][:tanzania].values,
       	  text: 'Count',
-      	  max: "max: null",
-      	  decimal: ".1f",
       	  sheet: "#{variable[:sheet]} by counts grouped by yes/no",
       	  index: "#{index}-count_binary_by_country",
       	  by_country: true
@@ -58,8 +52,6 @@
       	  malawi: variable[:binary_in_percent_by_country][:malawi].values.map {|i| i*100},
       	  tanzania: variable[:binary_in_percent_by_country][:tanzania].values.map {|i| i*100},
       	  text: 'Proportion',
-      	  max: "max: 100",
-      	  decimal: ".3f",
       	  sheet: "#{variable[:sheet]} by proportions grouped by yes/no",
       	  index: "#{index}-proportion_binary_by_country",
       	  by_country: true

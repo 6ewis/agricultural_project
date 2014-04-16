@@ -50,7 +50,7 @@ function dialogue(content, title) {
 
 
 window.Alert = function() {
-  var message = $('<p />', { text: "Click on a bar chart to expand it, and interact with it.\n Click on the icon above 'SORT' on the right hand corner to filter by Country, by Value Chain, by Composition of Group,or by Gender of Group Leader." }),
+  var message = $('<p />', { text: " You can click on any of the charts to enlarge and interact with them. Use the Sort option in the top right to choose a view of the data" }),
       ok = $('<button />', { text: 'Ok', 'class': 'full' });
 
     dialogue( message.add(ok), 'Help!' );

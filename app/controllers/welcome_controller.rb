@@ -10,10 +10,10 @@ class WelcomeController < ApplicationController
   def valuechain
   end
 
-  def gender_composition
+  def group_composition
   end
 
-  def gender_leader
+  def group_leader
   end
 
   def list

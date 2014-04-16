@@ -1,0 +1,99 @@
+<% list_variables.each_with_index do |variable, index| %>
+
+  <div class="row bottom-buffer">
+    <div class="col-md-5">
+       <%= render partial: "grade", locals: { bangladesh_female_groups: variable[:grade_by_group_composition][:bangladesh_female_groups].values,
+          bangladesh_mixed_groups: variable[:grade_by_group_composition][:bangladesh_mixed_groups].values,
+          ghana_female_groups: variable[:grade_by_group_composition][:ghana_female_groups].values,
+          ghana_mixed_groups: variable[:grade_by_group_composition][:ghana_mixed_groups].values,
+          india_female_groups: variable[:grade_by_group_composition][:india_female_groups].values,
+          india_mixed_groups: variable[:grade_by_group_composition][:india_mixed_groups].values,
+          malawi_female_groups: variable[:grade_by_group_composition][:malawi_female_groups].values,
+          malawi_mixed_groups: variable[:grade_by_group_composition][:malawi_mixed_groups].values,
+          tanzania_female_groups: variable[:grade_by_group_composition][:tanzania_female_groups ].values,
+          tanzania_mixed_groups: variable[:grade_by_group_composition][:tanzania_mixed_groups].values,
+          total_female_groups: variable[:grade_by_group_composition][:total_female_groups].values,
+          total_mixed_groups: variable[:grade_by_group_composition][:total_mixed_groups].values,
+          text: "Count",
+          sheet: "#{variable[:sheet]} by counts grouped by grades",
+          index: "#{index}-count_grade_by_group_composition",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: true
+
+      } %>
+    </div>
+
+    <div class="col-md-5">
+        <%= render partial: "grade", locals: { bangladesh_female_groups: variable[:grade_in_percent_by_group_composition][:bangladesh_female_groups].values,
+          bangladesh_mixed_groups: variable[:grade_in_percent_by_group_composition][:bangladesh_mixed_groups].values.map {|i| i*100},
+          ghana_female_groups: variable[:grade_in_percent_by_group_composition][:ghana_female_groups].values.map {|i| i*100},
+          ghana_mixed_groups: variable[:grade_in_percent_by_group_composition][:ghana_mixed_groups].values.map {|i| i*100},
+          india_female_groups: variable[:grade_in_percent_by_group_composition][:india_female_groups].values.map {|i| i*100},
+          india_mixed_groups: variable[:grade_in_percent_by_group_composition][:india_mixed_groups].values.map {|i| i*100},
+          malawi_female_groups: variable[:grade_in_percent_by_group_composition][:malawi_female_groups].values.map {|i| i*100},
+          malawi_mixed_groups: variable[:grade_in_percent_by_group_composition][:malawi_mixed_groups].values.map {|i| i*100},
+          tanzania_female_groups: variable[:grade_in_percent_by_group_composition][:tanzania_female_groups ].values.map {|i| i*100},
+          tanzania_mixed_groups: variable[:grade_in_percent_by_group_composition][:tanzania_mixed_groups].values.map {|i| i*100},
+          total_female_groups: variable[:grade_in_percent_by_group_composition][:total_female_groups].values.map {|i| i*100},
+          total_mixed_groups: variable[:grade_in_percent_by_group_composition][:total_mixed_groups].values.map {|i| i*100},
+          text: "Proportion",
+          sheet: "#{variable[:sheet]} by proportions grouped by grades",
+          index: "#{index}-proportion_grade_by_group_composition",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: true
+
+      } %>
+    </div>
+  </div>
+
+   <div class="row bottom-buffer">
+    <div class="col-md-5">
+          <%= render partial: "binary", locals: { bangladesh_female_groups: variable[:binary_by_group_composition][:bangladesh_female_groups].values,
+          bangladesh_mixed_groups: variable[:binary_by_group_composition][:bangladesh_mixed_groups].values,
+          ghana_female_groups: variable[:binary_by_group_composition][:ghana_female_groups].values,
+          ghana_mixed_groups: variable[:binary_by_group_composition][:ghana_mixed_groups].values,
+          india_female_groups: variable[:binary_by_group_composition][:india_female_groups].values,
+          india_mixed_groups: variable[:binary_by_group_composition][:india_mixed_groups].values,
+          malawi_female_groups: variable[:binary_by_group_composition][:malawi_female_groups].values,
+          malawi_mixed_groups: variable[:binary_by_group_composition][:malawi_mixed_groups].values,
+          tanzania_female_groups: variable[:binary_by_group_composition][:tanzania_female_groups ].values,
+          tanzania_mixed_groups: variable[:binary_by_group_composition][:tanzania_mixed_groups].values,
+          total_female_groups: variable[:binary_by_group_composition][:total_female_groups].values,
+          total_mixed_groups: variable[:binary_by_group_composition][:total_mixed_groups].values,
+          text: "Count",
+          sheet: "#{variable[:sheet]} by counts grouped by yes/no",
+          index: "#{index}-count_binary_by_group_composition",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: true
+
+      } %>
+    </div>
+    <div class="col-md-5">
+      <%= render partial: "binary", locals: { bangladesh_female_groups: variable[:binary_in_percent_by_group_composition][:bangladesh_female_groups].values,
+          bangladesh_mixed_groups: variable[:binary_in_percent_by_group_composition][:bangladesh_mixed_groups].values.map {|i| i*100},
+          ghana_female_groups: variable[:binary_in_percent_by_group_composition][:ghana_female_groups].values.map {|i| i*100},
+          ghana_mixed_groups: variable[:binary_in_percent_by_group_composition][:ghana_mixed_groups].values.map {|i| i*100},
+          india_female_groups: variable[:binary_in_percent_by_group_composition][:india_female_groups].values.map {|i| i*100},
+          india_mixed_groups: variable[:binary_in_percent_by_group_composition][:india_mixed_groups].values.map {|i| i*100},
+          malawi_female_groups: variable[:binary_in_percent_by_group_composition][:malawi_female_groups].values.map {|i| i*100},
+          malawi_mixed_groups: variable[:binary_in_percent_by_group_composition][:malawi_mixed_groups].values.map {|i| i*100},
+          tanzania_female_groups: variable[:binary_in_percent_by_group_composition][:tanzania_female_groups ].values.map {|i| i*100},
+          tanzania_mixed_groups: variable[:binary_in_percent_by_group_composition][:tanzania_mixed_groups].values.map {|i| i*100},
+          total_female_groups: variable[:binary_in_percent_by_group_composition][:total_female_groups].values.map {|i| i*100},
+          total_mixed_groups: variable[:binary_in_percent_by_group_composition][:total_mixed_groups].values.map {|i| i*100},
+          text: "Proportion",
+          sheet: "#{variable[:sheet]} by proportions grouped by yes/no",
+          index: "#{index}-proportion_binary_by_group_composition",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: true
+
+      } %>
+     
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,126 @@
+<% list_variables.each_with_index do |variable, index| %>
+
+  <div class="row bottom-buffer">
+    <div class="col-md-5">
+        <%= render partial: "grade", locals: { bangladesh_female_group_leader: variable[:grade_by_group_leader][:bangladesh_female_group_leader].values,
+          bangladesh_male_group_leader: variable[:grade_by_group_leader][:bangladesh_male_group_leader].values,
+          bangladesh_mixed_group_leader: variable[:grade_by_group_leader][:bangladesh_mixed_group_leader].values,
+          ghana_female_group_leader: variable[:grade_by_group_leader][:ghana_female_group_leader].values,
+          ghana_male_group_leader: variable[:grade_by_group_leader][:ghana_male_group_leader].values,
+          ghana_mixed_group_leader: variable[:grade_by_group_leader][:ghana_mixed_group_leader].values,
+          india_female_group_leader: variable[:grade_by_group_leader][:india_female_group_leader].values,
+          india_male_group_leader: variable[:grade_by_group_leader][:india_male_group_leader].values,
+          india_mixed_group_leader: variable[:grade_by_group_leader][:india_mixed_group_leader].values,
+          malawi_female_group_leader: variable[:grade_by_group_leader][:malawi_female_group_leader].values,
+          malawi_male_group_leader: variable[:grade_by_group_leader][:malawi_male_group_leader].values,
+          malawi_mixed_group_leader: variable[:grade_by_group_leader][:malawi_mixed_group_leader].values,
+          tanzania_female_group_leader: variable[:grade_by_group_leader][:tanzania_female_group_leader].values,
+          tanzania_male_group_leader: variable[:grade_by_group_leader][:tanzania_male_group_leader].values,
+          tanzania_mixed_group_leader: variable[:grade_by_group_leader][:tanzania_mixed_group_leader].values,
+          total_female_group_leader: variable[:grade_by_group_leader][:total_female_group_leader].values,
+          total_male_group_leader: variable[:grade_by_group_leader][:total_male_group_leader].values,
+          total_mixed_group_leader: variable[:grade_by_group_leader][:total_mixed_group_leader].values,
+          text: "Count",
+          sheet: "#{variable[:sheet]} by counts grouped by grades",
+          index: "#{index}-count_grade_by_group_leader",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: false,
+          by_group_leader: true
+
+      } %>
+    </div>
+
+    <div class="col-md-5">
+         <%= render partial: "grade", locals: { bangladesh_female_group_leader: variable[:grade_in_percent_by_group_leader][:bangladesh_female_group_leader].values.map {|i| i*100},
+          bangladesh_male_group_leader: variable[:grade_in_percent_by_group_leader][:bangladesh_male_group_leader].values.map {|i| i*100},
+          bangladesh_mixed_group_leader: variable[:grade_in_percent_by_group_leader][:bangladesh_mixed_group_leader].values.map {|i| i*100},
+          ghana_female_group_leader: variable[:grade_in_percent_by_group_leader][:ghana_female_group_leader].values.map {|i| i*100},
+          ghana_male_group_leader: variable[:grade_in_percent_by_group_leader][:ghana_male_group_leader].values.map {|i| i*100},
+          ghana_mixed_group_leader: variable[:grade_in_percent_by_group_leader][:ghana_mixed_group_leader].values.map {|i| i*100},
+          india_female_group_leader: variable[:grade_in_percent_by_group_leader][:india_female_group_leader].values.map {|i| i*100},
+          india_male_group_leader: variable[:grade_in_percent_by_group_leader][:india_male_group_leader].values.map {|i| i*100},
+          india_mixed_group_leader: variable[:grade_in_percent_by_group_leader][:india_mixed_group_leader].values.map {|i| i*100},
+          malawi_female_group_leader: variable[:grade_in_percent_by_group_leader][:malawi_female_group_leader].values.map {|i| i*100},
+          malawi_male_group_leader: variable[:grade_in_percent_by_group_leader][:malawi_male_group_leader].values.map {|i| i*100},
+          malawi_mixed_group_leader: variable[:grade_in_percent_by_group_leader][:malawi_mixed_group_leader].values.map {|i| i*100},
+          tanzania_female_group_leader: variable[:grade_in_percent_by_group_leader][:tanzania_female_group_leader].values.map {|i| i*100},
+          tanzania_male_group_leader: variable[:grade_in_percent_by_group_leader][:tanzania_male_group_leader].values.map {|i| i*100},
+          tanzania_mixed_group_leader: variable[:grade_in_percent_by_group_leader][:tanzania_mixed_group_leader].values.map {|i| i*100},
+          total_female_group_leader: variable[:grade_in_percent_by_group_leader][:total_female_group_leader].values.map {|i| i*100},
+          total_male_group_leader: variable[:grade_in_percent_by_group_leader][:total_male_group_leader].values.map {|i| i*100},
+          total_mixed_group_leader: variable[:grade_in_percent_by_group_leader][:total_mixed_group_leader].values.map {|i| i*100},
+          text: "Proportion",
+          sheet: "#{variable[:sheet]} by proportions grouped by grades",
+          index: "#{index}-count_grade_in_percent_by_group_leader",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: false,
+          by_group_leader: true
+
+      } %>
+    </div>
+  </div>
+
+   <div class="row bottom-buffer">
+    <div class="col-md-5">
+              <%= render partial: "binary", locals: { bangladesh_female_group_leader: variable[:binary_by_group_leader][:bangladesh_female_group_leader].values,
+          bangladesh_male_group_leader: variable[:binary_by_group_leader][:bangladesh_male_group_leader].values,
+          bangladesh_mixed_group_leader: variable[:binary_by_group_leader][:bangladesh_mixed_group_leader].values,
+          ghana_female_group_leader: variable[:binary_by_group_leader][:ghana_female_group_leader].values,
+          ghana_male_group_leader: variable[:binary_by_group_leader][:ghana_male_group_leader].values,
+          ghana_mixed_group_leader: variable[:binary_by_group_leader][:ghana_mixed_group_leader].values,
+          india_female_group_leader: variable[:binary_by_group_leader][:india_female_group_leader].values,
+          india_male_group_leader: variable[:binary_by_group_leader][:india_male_group_leader].values,
+          india_mixed_group_leader: variable[:binary_by_group_leader][:india_mixed_group_leader].values,
+          malawi_female_group_leader: variable[:binary_by_group_leader][:malawi_female_group_leader].values,
+          malawi_male_group_leader: variable[:binary_by_group_leader][:malawi_male_group_leader].values,
+          malawi_mixed_group_leader: variable[:binary_by_group_leader][:malawi_mixed_group_leader].values,
+          tanzania_female_group_leader: variable[:binary_by_group_leader][:tanzania_female_group_leader].values,
+          tanzania_male_group_leader: variable[:binary_by_group_leader][:tanzania_male_group_leader].values,
+          tanzania_mixed_group_leader: variable[:binary_by_group_leader][:tanzania_mixed_group_leader].values,
+          total_female_group_leader: variable[:binary_by_group_leader][:total_female_group_leader].values,
+          total_male_group_leader: variable[:binary_by_group_leader][:total_male_group_leader].values,
+          total_mixed_group_leader: variable[:binary_by_group_leader][:total_mixed_group_leader].values,
+          text: "Count",
+          sheet: "#{variable[:sheet]} by counts grouped by yes/no",
+          index: "#{index}-count_binary_by_group_leader",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: false,
+          by_group_leader: true
+
+      } %>
+    </div>
+    <div class="col-md-5">
+         <%= render partial: "binary", locals: { bangladesh_female_group_leader: variable[:binary_in_percent_by_group_leader][:bangladesh_female_group_leader].values.map {|i| i*100},
+          bangladesh_male_group_leader: variable[:binary_in_percent_by_group_leader][:bangladesh_male_group_leader].values.map {|i| i*100},
+          bangladesh_mixed_group_leader: variable[:binary_in_percent_by_group_leader][:bangladesh_mixed_group_leader].values.map {|i| i*100},
+          ghana_female_group_leader: variable[:binary_in_percent_by_group_leader][:ghana_female_group_leader].values.map {|i| i*100},
+          ghana_male_group_leader: variable[:binary_in_percent_by_group_leader][:ghana_male_group_leader].values.map {|i| i*100},
+          ghana_mixed_group_leader: variable[:binary_in_percent_by_group_leader][:ghana_mixed_group_leader].values.map {|i| i*100},
+          india_female_group_leader: variable[:binary_in_percent_by_group_leader][:india_female_group_leader].values.map {|i| i*100},
+          india_male_group_leader: variable[:binary_in_percent_by_group_leader][:india_male_group_leader].values.map {|i| i*100},
+          india_mixed_group_leader: variable[:binary_in_percent_by_group_leader][:india_mixed_group_leader].values.map {|i| i*100},
+          malawi_female_group_leader: variable[:binary_in_percent_by_group_leader][:malawi_female_group_leader].values.map {|i| i*100},
+          malawi_male_group_leader: variable[:binary_in_percent_by_group_leader][:malawi_male_group_leader].values.map {|i| i*100},
+          malawi_mixed_group_leader: variable[:binary_in_percent_by_group_leader][:malawi_mixed_group_leader].values.map {|i| i*100},
+          tanzania_female_group_leader: variable[:binary_in_percent_by_group_leader][:tanzania_female_group_leader].values.map {|i| i*100},
+          tanzania_male_group_leader: variable[:binary_in_percent_by_group_leader][:tanzania_male_group_leader].values.map {|i| i*100},
+          tanzania_mixed_group_leader: variable[:binary_in_percent_by_group_leader][:tanzania_mixed_group_leader].values.map {|i| i*100},
+          total_female_group_leader: variable[:binary_in_percent_by_group_leader][:total_female_group_leader].values.map {|i| i*100},
+          total_male_group_leader: variable[:binary_in_percent_by_group_leader][:total_male_group_leader].values.map {|i| i*100},
+          total_mixed_group_leader: variable[:binary_in_percent_by_group_leader][:total_mixed_group_leader].values.map {|i| i*100},
+          text: "Proportion",
+          sheet: "#{variable[:sheet]} by proportions grouped by yes/no",
+          index: "#{index}-count_binary_in_percent_by_group_leader",
+          by_country: false,
+          by_value_chain: false,
+          by_group_composition: false,
+          by_group_leader: true
+      } %>
+     
+    </div>
+  </div>
+
+<% end %>

@@ -42,7 +42,7 @@ createGraph({
                     borderWidth: 0
                 }
             },
-            <% if by_country %>
+       <% if by_country %>
             series: [{
                 name: 'Bangladesh',
                 data: <%= bangladesh %>
@@ -61,6 +61,10 @@ createGraph({
             }, {
                 name: 'Tanzania',
                 data: <%= tanzania %>
+    
+            }, {
+                name: 'Overall',
+                data: <%= overall %>
     
             }]
            <% elsif by_value_chain %>
@@ -99,7 +103,136 @@ createGraph({
                 name: 'Tanzania Sesame',
                 data: <%= tanzania_sesame %>
     
+            }, {
+                name: 'Overall',
+                data: <%= overall %>
+    
             }]
+             <% elsif by_group_composition %>
+            series: [{
+                name: 'Bangladesh Female Groups',
+                data: <%= bangladesh_female_groups %>
+            }, {
+                name: 'Bangladesh Mixed Groups',
+                data: <%= bangladesh_mixed_groups %>
+    
+            }, {
+                name: 'Ghana Female Groups',
+                data: <%= ghana_female_groups %>
+    
+            }, {
+                name: 'Ghana Mixed Groups',
+                data: <%= ghana_mixed_groups %>
+    
+            }, {
+                name: 'India Female Groups',
+                data: <%= india_female_groups %>
+    
+            }, {
+                name: 'India Mixed Groups',
+                data: <%= india_mixed_groups %>
+    
+            }, {
+                name: 'Malawi Female Groups ',
+                data: <%= malawi_female_groups  %>
+    
+            }, {
+                name: 'Malawi Mixed Groups',
+                data: <%= malawi_mixed_groups %>
+    
+            }, {
+                name: 'Tanzania Female Groups',
+                data: <%= tanzania_female_groups %>
+    
+            }, {
+                name: 'Tanzania Mixed Groups',
+                data: <%= tanzania_mixed_groups %>
+    
+            }, {
+                name: 'Total Female Groups',
+                data: <%= total_female_groups %>
+    
+            }, {
+                name: 'Total Mixed Groups',
+                data: <%= total_mixed_groups %>
+    
+            }]
+
+            <% elsif by_group_leader %>
+
+             series: [{
+                name: 'Bangladesh Female Group Leader',
+                data: <%= bangladesh_female_group_leader  %>
+            }, {
+                name: 'Bangladesh Male Group Leader',
+                data: <%= bangladesh_male_group_leader %>
+    
+            }, {
+                name: 'Bangladesh Mixed Group Leader',
+                data: <%= bangladesh_mixed_group_leader %>
+    
+            }, {
+                name: 'Ghana Female Group Leader',
+                data: <%= ghana_female_group_leader %>
+    
+            }, {
+                name: 'Ghana Male Group Leader',
+                data: <%= ghana_male_group_leader %>
+    
+            }, {
+                name: 'Ghana Mixed Group Leader',
+                data: <%= ghana_mixed_group_leader %>
+    
+            }, {
+                name: 'India Female Group Leader',
+                data: <%= india_female_group_leader  %>
+    
+            }, {
+                name: 'India Male Group Leader',
+                data: <%= india_male_group_leader %>
+    
+            }, {
+                name: 'India Mixed Group Leader',
+                data: <%= india_mixed_group_leader %>
+    
+            }, {
+                name: 'Malawi Female Group Leader',
+                data: <%= malawi_female_group_leader %>
+    
+            }, {
+                name: 'Malawi Male Group Leader',
+                data: <%= malawi_male_group_leader %>
+    
+            }, {
+                name: 'Malawi Mixed Group Leader',
+                data: <%= malawi_mixed_group_leader %>
+    
+            }, {
+                name: 'Tanzania Female Group Leader',
+                data: <%= tanzania_female_group_leader %>
+    
+            }, {
+                name: 'Tanzania Male Group Leader',
+                data: <%= tanzania_male_group_leader %>
+    
+            }, {
+                name: 'Tanzania Mixed Group Leader',
+                data: <%= tanzania_mixed_group_leader %>
+    
+            }, {
+                name: 'Total Female Group Leader',
+                data: <%= total_female_group_leader %>
+    
+            }, {
+                name: 'Total Male Group Leader',
+                data: <%= total_male_group_leader %>
+    
+            }, {
+                name: 'Total Mixed Group Leader',
+                data: <%= total_mixed_group_leader %>
+    
+            }]
+
             <% end %>
             
         });

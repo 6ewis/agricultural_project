@@ -6,12 +6,4 @@ class Welcome
       DataStructure.list_variables
   end
 
-  def self.by_country
-  end
-
-  def self.valuechain
-  end
-
-  def self.groupgender
-  end
 end

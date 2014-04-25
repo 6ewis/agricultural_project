@@ -5,8 +5,6 @@ gem 'pg'
 gem 'roo' #Importing from Excel
 gem 'jquery-qtip2-rails'
 
-
-
 gem 'rails_12factor', group: :production
 
 gem 'sass-rails', '~> 4.0.3'

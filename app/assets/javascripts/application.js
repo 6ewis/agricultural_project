@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require highcharts
+//= require exporting
 //= require_tree .
 //= require jquery.qtip.js
 
